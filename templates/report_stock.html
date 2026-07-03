@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Stock Report</h2>
+
+    <table border="1">
+        <tr>
+            <th>Item</th>
+            <th>Shop</th>
+            <th>Quantity</th>
+            <th>Status</th>
+        </tr>
+        {% for s in stocks %}
+        <tr>
+            <td>{{ s.item.name }}</td>
+            <td>{{ s.shop_name }}</td>
+            <td>{{ s.quantity }}</td>
+            <td>{% if s.quantity < 20 %}⚠️ Low Stock{% else %}✅ OK{% endif %}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

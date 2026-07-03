@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Monthly Distribution Report</h2>
+
+    <table border="1">
+        <tr>
+            <th>Item</th>
+            <th>Total Distributed</th>
+        </tr>
+        {% for name, total in results %}
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ total }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

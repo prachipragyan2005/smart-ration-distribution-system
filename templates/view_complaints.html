@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Complaints</h2>
+
+    <a href="/raise_complaint">+ Raise Complaint</a>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Beneficiary</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+
+        {% for c in complaints %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.beneficiary.name }}</td>
+            <td>{{ c.description }}</td>
+            <td>{{ c.status }}</td>
+            <td>{{ c.date.strftime('%d-%m-%Y') }}</td>
+            <td>
+                {% if c.status == "Open" %}
+                <a href="/resolve_complaint/{{ c.id }}">Mark Resolved</a>
+                {% else %}
+                ✅ Done
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

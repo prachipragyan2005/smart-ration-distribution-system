@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Audit Logs</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Action</th>
+            <th>Performed By (User ID)</th>
+            <th>Timestamp</th>
+        </tr>
+
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.id }}</td>
+            <td>{{ log.action }}</td>
+            <td>{{ log.performed_by }}</td>
+            <td>{{ log.timestamp.strftime('%d-%m-%Y %H:%M') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

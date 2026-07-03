@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Distribute Ration</h2>
+
+    <form method="POST">
+        Beneficiary:
+        <select name="beneficiary_id">
+            {% for b in beneficiaries %}
+            <option value="{{ b.id }}">{{ b.name }} ({{ b.ration_card }})</option>
+            {% endfor %}
+        </select><br><br>
+
+        Item:
+        <select name="item_id">
+            {% for item in items %}
+            <option value="{{ item.id }}">{{ item.name }} ({{ item.unit }})</option>
+            {% endfor %}
+        </select><br><br>
+
+        Quantity: <input type="number" step="0.01" name="quantity"><br><br>
+
+        <button type="submit">Distribute</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Stock List</h2>
+
+    <a href="/add_item">+ Add Ration Item</a> |
+    <a href="/add_stock">+ Allocate Stock</a>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Item</th>
+            <th>Shop</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+
+        {% for s in stocks %}
+        <tr>
+            <td>{{ s.id }}</td>
+            <td>{{ s.item.name }}</td>
+            <td>{{ s.shop_name }}</td>
+            <td>{{ s.quantity }}</td>
+            <td><a href="delete_stock/{{ s.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>{{ 'Edit' if data else 'Add' }} Beneficiary</h2>
+
+    <form method="POST">
+        Name: <input type="text" name="name" value="{{ data.name if data else '' }}"><br><br>
+        Ration Card: <input type="text" name="ration_card" value="{{ data.ration_card if data else '' }}"><br><br>
+        Members: <input type="number" name="members" value="{{ data.members if data else '' }}"><br><br>
+
+        <button type="submit">{{ 'Update' if data else 'Add' }}</button>
+    </form>
+</body>
+</html>
